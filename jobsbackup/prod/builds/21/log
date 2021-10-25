@@ -1,0 +1,240 @@
+Started by user [8mha:////4M/bqk4aNQZHVITmKUsCYYCPPDlY0yTb56LIPx2Pjh0RAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/nagadevops2016/jenkins-maven.git # timeout=10
+Fetching upstream changes from https://github.com/nagadevops2016/jenkins-maven.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.30.1.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/nagadevops2016/jenkins-maven.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision bf46ffa2adfd78d60d84d1db1300814533aea6ed (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f bf46ffa2adfd78d60d84d1db1300814533aea6ed # timeout=10
+Commit message: "Update index.jsp"
+ > git.exe rev-list --no-walk bf46ffa2adfd78d60d84d1db1300814533aea6ed # timeout=10
+[prod] $ cmd.exe /C "mvn clean package && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Time Tracker (Parent)                                              [pom]
+[INFO] Time Tracker (Core)                                                [jar]
+[INFO] Time Tracker (Web)                                                 [war]
+[INFO] 
+[INFO] -------------< training.time-tracker:time-tracker-parent >--------------
+[INFO] Building Time Tracker (Parent) 0.3.1-SNAPSHOT                      [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ time-tracker-parent ---
+[INFO] 
+[INFO] --------------< training.time-tracker:time-tracker-core >---------------
+[INFO] Building Time Tracker (Core) 0.3.1-SNAPSHOT                        [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ time-tracker-core ---
+[INFO] Deleting C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\target
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ time-tracker-core ---
+[8mha:////4C2amq/RO5fqkMSiLQ72SenxiTwCcnNaCqmOnNN18vxXAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\src\main\resources
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ time-tracker-core ---
+[INFO] Changes detected - recompiling the module!
+[8mha:////4C2amq/RO5fqkMSiLQ72SenxiTwCcnNaCqmOnNN18vxXAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 3 source files to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\target\classes
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ time-tracker-core ---
+[8mha:////4C2amq/RO5fqkMSiLQ72SenxiTwCcnNaCqmOnNN18vxXAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\src\test\resources
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ time-tracker-core ---
+[INFO] Changes detected - recompiling the module!
+[8mha:////4C2amq/RO5fqkMSiLQ72SenxiTwCcnNaCqmOnNN18vxXAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\target\test-classes
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ time-tracker-core ---
+[INFO] Surefire report directory: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running pro.jtaylor.timetracker.core.TrackerCoreConfigTest
+Apr 29, 2021 1:21:09 PM org.springframework.test.context.support.DefaultTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+Apr 29, 2021 1:21:09 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+Apr 29, 2021 1:21:09 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+Apr 29, 2021 1:21:09 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+Apr 29, 2021 1:21:09 PM org.springframework.test.context.support.DefaultTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6442b0a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@60f82f98]
+Apr 29, 2021 1:21:09 PM org.springframework.context.support.GenericApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.GenericApplicationContext@531be3c5: startup date [Thu Apr 29 13:21:09 IST 2021]; root of context hierarchy
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.844 sec
+Running pro.jtaylor.timetracker.core.TrackerTest
+Apr 29, 2021 1:21:10 PM org.springframework.test.context.support.DefaultTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFO: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+Apr 29, 2021 1:21:10 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+Apr 29, 2021 1:21:10 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+Apr 29, 2021 1:21:10 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFO: Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+Apr 29, 2021 1:21:10 PM org.springframework.test.context.support.DefaultTestContextBootstrapper getTestExecutionListeners
+INFO: Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6af93788, org.springframework.test.context.support.DirtiesContextTestExecutionListener@ef9296d]
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Apr 29, 2021 1:21:10 PM org.springframework.context.support.GenericApplicationContext doClose
+INFO: Closing org.springframework.context.support.GenericApplicationContext@531be3c5: startup date [Thu Apr 29 13:21:09 IST 2021]; root of context hierarchy
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ time-tracker-core ---
+[INFO] Building jar: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\core\target\time-tracker-core-0.3.1-SNAPSHOT.jar
+[INFO] 
+[INFO] ---------------< training.time-tracker:time-tracker-web >---------------
+[INFO] Building Time Tracker (Web) 0.3.1-SNAPSHOT                         [3/3]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ time-tracker-web ---
+[INFO] Deleting C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\target
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ time-tracker-web ---
+[8mha:////4C2amq/RO5fqkMSiLQ72SenxiTwCcnNaCqmOnNN18vxXAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\src\main\resources
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ time-tracker-web ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ time-tracker-web ---
+[8mha:////4C2amq/RO5fqkMSiLQ72SenxiTwCcnNaCqmOnNN18vxXAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\src\test\resources
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ time-tracker-web ---
+[INFO] No sources to compile
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ time-tracker-web ---
+[INFO] No tests to run.
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-war-plugin:2.2:war (default-war) @ time-tracker-web ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [time-tracker-web] in [C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\target\time-tracker-web-0.3.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\src\main\webapp]
+[INFO] Webapp assembled in [43 msecs]
+[INFO] Building war: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\target\time-tracker-web-0.3.1-SNAPSHOT.war
+[INFO] WEB-INF\web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Time Tracker (Parent) 0.3.1-SNAPSHOT:
+[INFO] 
+[INFO] Time Tracker (Parent) .............................. SUCCESS [  0.652 s]
+[INFO] Time Tracker (Core) ................................ SUCCESS [ 15.190 s]
+[INFO] Time Tracker (Web) ................................. SUCCESS [  1.230 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17.309 s
+[INFO] Finished at: 2021-04-29T13:21:12+05:30
+[INFO] ------------------------------------------------------------------------
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\target\time-tracker-web-0.3.1-SNAPSHOT.war to container Tomcat 9.x Remote with context null
+ERROR: Build step failed with exception
+org.codehaus.cargo.container.ContainerException: Failed to redeploy [C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod\web\target\time-tracker-web-0.3.1-SNAPSHOT.war]
+	at org.codehaus.cargo.container.tomcat.internal.AbstractTomcatManagerDeployer.redeploy(AbstractTomcatManagerDeployer.java:176)
+	at hudson.plugins.deploy.CargoContainerAdapter.deploy(CargoContainerAdapter.java:81)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:167)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:136)
+	at hudson.FilePath.act(FilePath.java:1164)
+	at hudson.FilePath.act(FilePath.java:1147)
+	at hudson.plugins.deploy.CargoContainerAdapter.redeployFile(CargoContainerAdapter.java:133)
+	at hudson.plugins.deploy.PasswordProtectedAdapterCargo.redeployFile(PasswordProtectedAdapterCargo.java:95)
+	at hudson.plugins.deploy.DeployPublisher.perform(DeployPublisher.java:113)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:123)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:80)
+	at hudson.tasks.BuildStepMonitor$3.perform(BuildStepMonitor.java:45)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:803)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:752)
+	at hudson.model.Build$BuildExecution.post2(Build.java:177)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:697)
+	at hudson.model.Run.execute(Run.java:1932)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.invoke(TomcatManager.java:567)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.list(TomcatManager.java:882)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.getStatus(TomcatManager.java:895)
+	at org.codehaus.cargo.container.tomcat.internal.AbstractTomcatManagerDeployer.redeploy(AbstractTomcatManagerDeployer.java:161)
+	... 19 more
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at java.net.Socket.connect(Socket.java:555)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.invoke(TomcatManager.java:567)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.list(TomcatManager.java:882)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.getStatus(TomcatManager.java:895)
+	at org.codehaus.cargo.container.tomcat.internal.AbstractTomcatManagerDeployer.redeploy(AbstractTomcatManagerDeployer.java:161)
+	at hudson.plugins.deploy.CargoContainerAdapter.deploy(CargoContainerAdapter.java:81)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:167)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:136)
+	at hudson.FilePath.act(FilePath.java:1164)
+	at hudson.FilePath.act(FilePath.java:1147)
+	at hudson.plugins.deploy.CargoContainerAdapter.redeployFile(CargoContainerAdapter.java:133)
+	at hudson.plugins.deploy.PasswordProtectedAdapterCargo.redeployFile(PasswordProtectedAdapterCargo.java:95)
+	at hudson.plugins.deploy.DeployPublisher.perform(DeployPublisher.java:113)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:123)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:80)
+	at hudson.tasks.BuildStepMonitor$3.perform(BuildStepMonitor.java:45)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:803)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:752)
+	at hudson.model.Build$BuildExecution.post2(Build.java:177)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:697)
+	at hudson.model.Run.execute(Run.java:1932)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+Build step 'Deploy war/ear to a container' marked build as failure
+Sending e-mails to: nagireddy.yerava@gmail.com
+Finished: FAILURE

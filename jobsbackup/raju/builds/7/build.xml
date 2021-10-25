@@ -1,0 +1,160 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <org.jenkinsci.lib.xtrigger.XTriggerCauseAction plugin="poll-mailbox-trigger-plugin@1.026">
+      <build class="build" reference="../../.."/>
+    </org.jenkinsci.lib.xtrigger.XTriggerCauseAction>
+    <org.jenkinsci.plugins.pollmailboxtrigger.environment.SetEnvironmentVariablesAction plugin="poll-mailbox-trigger-plugin@1.026">
+      <parameters>
+        <entry>
+          <string>pmt_mail.imaps.host</string>
+          <string>imap.gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_attachments</string>
+          <string>IGNORE</string>
+        </entry>
+        <entry>
+          <string>pmt_mail.debug.auth</string>
+          <string>false</string>
+        </entry>
+        <entry>
+          <string>pmt_retryEmailLink</string>
+          <string>&lt;a href=&quot;mailto:nagarajup1603@gmail.com?subject=jenkins&amp;body=%0D%0A&lt;div dir=&amp;quot;ltr&amp;quot;&gt;hello&lt;/div&gt;%0D%0A%0D%0Ahello%0D%0A&quot;&gt;Click to Retry Job&lt;/a&gt;</string>
+        </entry>
+        <entry>
+          <string>pmt_receivedXMinutesAgo</string>
+          <string>1440</string>
+        </entry>
+        <entry>
+          <string>pmt_mail.debug</string>
+          <string>false</string>
+        </entry>
+        <entry>
+          <string>pmt_storeName</string>
+          <string>imaps</string>
+        </entry>
+        <entry>
+          <string>pmt_subject</string>
+          <string>jenkins</string>
+        </entry>
+        <entry>
+          <string>pmt_folder</string>
+          <string>INBOX</string>
+        </entry>
+        <entry>
+          <string>pmt_content</string>
+          <string>
+&lt;div dir=&quot;ltr&quot;&gt;hello&lt;/div&gt;&#xd;
+
+hello&#xd;
+</string>
+        </entry>
+        <entry>
+          <string>pmt_contentType</string>
+          <string>multipart/ALTERNATIVE; boundary=000000000000450bef05c2952c1e</string>
+        </entry>
+        <entry>
+          <string>pmt_flags</string>
+          <string></string>
+        </entry>
+        <entry>
+          <string>pmt_username</string>
+          <string>nagarajup1603@gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_subjectContains</string>
+          <string>jenkins</string>
+        </entry>
+        <entry>
+          <string>pmt_messageNumber</string>
+          <string>19124</string>
+        </entry>
+        <entry>
+          <string>pmt_headers</string>
+          <string>MIME-Version=1.0, Date=Tue, 18 May 2021 12:23:51 +0530, Message-ID=&lt;CACYW4v=KLMPExhbTKk26D7x2B3WFNXUtDRcJ0MbErECoYnL4rg@mail.gmail.com&gt;, Subject=jenkins, From=nagaraju p &lt;nagarajup1603@gmail.com&gt;, To=nagaraju p &lt;nagarajup1603@gmail.com&gt;, Content-Type=multipart/alternative; boundary=&quot;000000000000450bef05c2952c1e&quot;</string>
+        </entry>
+        <entry>
+          <string>pmt_from</string>
+          <string>nagarajup1603@gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_sentDate</string>
+          <string>2021-05-18T12:23Z</string>
+        </entry>
+        <entry>
+          <string>pmt_host</string>
+          <string>imap.gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_receivedDate</string>
+          <string>2021-05-18T12:23Z</string>
+        </entry>
+        <entry>
+          <string>pmt_mail.imaps.port</string>
+          <string>993</string>
+        </entry>
+        <entry>
+          <string>pmt_recipients</string>
+          <string>nagarajup1603@gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_replyTo</string>
+          <string>nagarajup1603@gmail.com</string>
+        </entry>
+      </parameters>
+    </org.jenkinsci.plugins.pollmailboxtrigger.environment.SetEnvironmentVariablesAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger_-NewEmailCause plugin="poll-mailbox-trigger-plugin@1.026">
+            <triggerName>PollMailboxTrigger</triggerName>
+            <causeFrom>Job was triggered by email sent from nagarajup1603@gmail.com</causeFrom>
+            <logEnabled>true</logEnabled>
+          </org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger_-NewEmailCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.git.util.BuildData plugin="git@4.7.1">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@3.7.1">
+              <sha1>bf46ffa2adfd78d60d84d1db1300814533aea6ed</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>7</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://github.com/nagadevops2016/jenkins-maven.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.scm.SCMRevisionState_-None/>
+  </actions>
+  <queueId>3</queueId>
+  <timestamp>1621320912119</timestamp>
+  <startTime>1621320912172</startTime>
+  <result>FAILURE</result>
+  <duration>33543</duration>
+  <charset>windows-1252</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\raju</workspace>
+  <hudsonVersion>2.277.1</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@4.7.1">
+    <authorOrCommitter>false</authorOrCommitter>
+    <showEntireCommitSummaryInChanges>true</showEntireCommitSummaryInChanges>
+  </scm>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

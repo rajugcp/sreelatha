@@ -1,0 +1,22 @@
+Started by remote host [0:0:0:0:0:0:0:1]
+Running as SYSTEM
+Building in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\prod
+[prod] $ cmd.exe /C "mvn clean package && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Time Tracker (Parent)                                              [pom]
+[INFO] Time Tracker (Core)                                                [jar]
+[INFO] Time Tracker (Web)                                                 [war]
+[INFO] 
+[INFO] -------------< training.time-tracker:time-tracker-parent >--------------
+[INFO] Building Time Tracker (Parent) 0.3.1-SNAPSHOT                      [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[8mha:////4JxSD+fj4cgTIpdr/mNPy6uRkvruDMP1vAmhwN/ArwaIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ time-tracker-parent ---
+Terminate batch job (Y/N)? 
+Build was aborted
+Aborted by [8mha:////4M/bqk4aNQZHVITmKUsCYYCPPDlY0yTb56LIPx2Pjh0RAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+[DeployPublisher][INFO] Build failed, project not deployed
+Finished: ABORTED

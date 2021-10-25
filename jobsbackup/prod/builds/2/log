@@ -1,0 +1,22 @@
+Started by user [8mha:////4M/bqk4aNQZHVITmKUsCYYCPPDlY0yTb56LIPx2Pjh0RAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\test1
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/nagadevops2016/jenkins-maven.git
+ > git.exe init C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\test1 # timeout=10
+Fetching upstream changes from https://github.com/nagadevops2016/jenkins-maven.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.30.1.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/nagadevops2016/jenkins-maven.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe config remote.origin.url https://github.com/nagadevops2016/jenkins-maven.git # timeout=10
+ > git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 43f0e8395891418e2e6cc6a91018dd00e29d36ad (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 43f0e8395891418e2e6cc6a91018dd00e29d36ad # timeout=10
+Commit message: "Create maven-tomcat.xml"
+First time build. Skipping changelog.
+Finished: SUCCESS

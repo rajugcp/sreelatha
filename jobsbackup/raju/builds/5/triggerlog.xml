@@ -1,0 +1,38 @@
+Polling started on May 18, 2021 12:23:50 PM
+Polling for the job raju
+Looking nodes where the poll can be run.
+Looking for a candidate node to run the poll.
+Looking for a node with no predefined label.
+Trying to poll with the last built on node.
+
+Polling on master.
+Connecting to the mailbox...
+[Poll Mailbox Trigger] - Connected!
+Found properties:
+- [attachments:IGNORE]
+- [folder:INBOX]
+- [host:imap.gmail.com]
+- [mail.debug:false]
+- [mail.debug.auth:false]
+- [mail.imaps.host:imap.gmail.com]
+- [mail.imaps.port:993]
+- [password:***]
+- [receivedXMinutesAgo:1440]
+- [storeName:imaps]
+- [subjectContains:jenkins]
+- [username:nagarajup1603@gmail.com]
+Connected to mailbox. Searching for messages where:
+- [flag is unread]
+- [subject contains 'jenkins']
+- [received date is greater than '2021/05/17 12:23:52 PM']
+...
+Searching folder...
+Found matching email(s) : 3
+
+- jenkins (2021/05/18 12:08:37 PM)
+
+- jenkins (2021/05/18 12:09:29 PM)
+
+- jenkins (2021/05/18 12:23:51 PM)
+Download attachments? IGNORE
+Changes found. Scheduling a build.

@@ -1,0 +1,65 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.40">
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.90">
+    <script>node {
+ deleteDir()
+ sh &quot;&quot;&quot;
+ git clone git@github.com:jenkinsci/git-changelog-plugin.git .
+ &quot;&quot;&quot;
+
+ def changelogString = gitChangelog returnType: &apos;STRING&apos;,
+  from: [type: &apos;REF&apos;, value: &apos;git-changelog-1.50&apos;],
+  to: [type: &apos;REF&apos;, value: &apos;master&apos;],
+  template: &quot;&quot;&quot;
+  &lt;h1&gt; Git Changelog changelog &lt;/h1&gt;
+
+&lt;p&gt;
+Changelog of Git Changelog.
+&lt;/p&gt;
+
+{{#tags}}
+&lt;h2&gt; {{name}} &lt;/h2&gt;
+ {{#issues}}
+  {{#hasIssue}}
+   {{#hasLink}}
+&lt;h2&gt; {{name}} &lt;a href=&quot;{{link}}&quot;&gt;{{issue}}&lt;/a&gt; {{title}} &lt;/h2&gt;
+   {{/hasLink}}
+   {{^hasLink}}
+&lt;h2&gt; {{name}} {{issue}} {{title}} &lt;/h2&gt;
+   {{/hasLink}}
+  {{/hasIssue}}
+  {{^hasIssue}}
+&lt;h2&gt; {{name}} &lt;/h2&gt;
+  {{/hasIssue}}
+
+
+   {{#commits}}
+&lt;a href=&quot;https://url{{hash}}&quot;&gt;{{hash}}&lt;/a&gt; {{authorName}} &lt;i&gt;{{commitTime}}&lt;/i&gt;
+&lt;p&gt;
+&lt;h3&gt;{{{messageTitle}}}&lt;/h3&gt;
+
+{{#messageBodyItems}}
+ &lt;li&gt; {{.}}&lt;/li&gt; 
+{{/messageBodyItems}}
+&lt;/p&gt;
+
+
+  {{/commits}}
+
+ {{/issues}}
+{{/tags}}
+  &quot;&quot;&quot;
+
+mail bcc: &apos;&apos;, body: &quot;&quot;&quot;Here is the changelog:
+
+${changelogString}
+&quot;&quot;&quot;, cc: &apos;&apos;, from: &apos;&apos;, replyTo: &apos;&apos;, subject: &apos;The Changelog&apos;, to: &apos;user@email&apos;
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

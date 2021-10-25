@@ -1,0 +1,113 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.40">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.18">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>3528</queueId>
+  <timestamp>1623235022946</timestamp>
+  <startTime>1623235023000</startTime>
+  <result>FAILURE</result>
+  <duration>4472</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>node {
+ deleteDir()
+ sh &quot;&quot;&quot;
+ git clone git@github.com:jenkinsci/git-changelog-plugin.git .
+ &quot;&quot;&quot;
+
+ def changelogString = gitChangelog returnType: &apos;STRING&apos;,
+  from: [type: &apos;REF&apos;, value: &apos;git-changelog-1.50&apos;],
+  to: [type: &apos;REF&apos;, value: &apos;master&apos;],
+  template: &quot;&quot;&quot;
+  &lt;h1&gt; Git Changelog changelog &lt;/h1&gt;
+
+&lt;p&gt;
+Changelog of Git Changelog.
+&lt;/p&gt;
+
+{{#tags}}
+&lt;h2&gt; {{name}} &lt;/h2&gt;
+ {{#issues}}
+  {{#hasIssue}}
+   {{#hasLink}}
+&lt;h2&gt; {{name}} &lt;a href=&quot;{{link}}&quot;&gt;{{issue}}&lt;/a&gt; {{title}} &lt;/h2&gt;
+   {{/hasLink}}
+   {{^hasLink}}
+&lt;h2&gt; {{name}} {{issue}} {{title}} &lt;/h2&gt;
+   {{/hasLink}}
+  {{/hasIssue}}
+  {{^hasIssue}}
+&lt;h2&gt; {{name}} &lt;/h2&gt;
+  {{/hasIssue}}
+
+
+   {{#commits}}
+&lt;a href=&quot;https://url{{hash}}&quot;&gt;{{hash}}&lt;/a&gt; {{authorName}} &lt;i&gt;{{commitTime}}&lt;/i&gt;
+&lt;p&gt;
+&lt;h3&gt;{{{messageTitle}}}&lt;/h3&gt;
+
+{{#messageBodyItems}}
+ &lt;li&gt; {{.}}&lt;/li&gt; 
+{{/messageBodyItems}}
+&lt;/p&gt;
+
+
+  {{/commits}}
+
+ {{/issues}}
+{{/tags}}
+  &quot;&quot;&quot;
+
+mail bcc: &apos;&apos;, body: &quot;&quot;&quot;Here is the changelog:
+
+${changelogString}
+&quot;&quot;&quot;, cc: &apos;&apos;, from: &apos;&apos;, replyTo: &apos;&apos;, subject: &apos;The Changelog&apos;, to: &apos;user@email&apos;
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>1086578000</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>229159700</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>2728227700</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>819259000</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>679113300</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>9</iota>
+    <head>1:9</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

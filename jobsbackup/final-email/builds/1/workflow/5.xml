@@ -1,0 +1,42 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.8">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.90">
+    <parentIds>
+      <string>4</string>
+    </parentIds>
+    <id>5</id>
+    <descriptorId>hudson.plugins.emailext.EmailExtStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.90">
+      <arguments>
+        <entry>
+          <string>body</string>
+          <string>&lt;p&gt;STARTED: Job &apos;final-email [1]&apos;:&lt;/p&gt;
+        &lt;p&gt;Check console output at &amp;QUOT;&lt;a href=&apos;http://localhost:8080/job/final-email/1/&apos;&gt;final-email [1]&lt;/a&gt;&amp;QUOT;&lt;/p&gt;</string>
+        </entry>
+        <entry>
+          <string>recipientProviders</string>
+          <list>
+            <linked-hash-map>
+              <entry>
+                <string>$class</string>
+                <string>DevelopersRecipientProvider</string>
+              </entry>
+            </linked-hash-map>
+          </list>
+        </entry>
+        <entry>
+          <string>subject</string>
+          <string>STARTED: Job &apos;final-email [1]&apos;</string>
+        </entry>
+      </arguments>
+      <sensitiveVariables/>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.42">
+      <startTime>1623314148567</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>

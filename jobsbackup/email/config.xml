@@ -1,0 +1,96 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.40">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.90">
+    <script>node
+{
+
+def jobName = currentBuild.fullDisplayName
+def mailToRecipients = &apos;nagarajup1603@gmail.com&apos;
+def useremail=&apos;nagarajup1603@gmail.com&apos;
+
+stage(&apos;Build&apos;) 
+{
+    def userAborted = false
+
+ emailext body: &apos;&apos;&apos;
+    Please go to console output of ${BUILD_URL} to input your approve or Reject.&lt;br&gt;
+ &apos;&apos;&apos;,    
+    mimeType: &apos;text/html&apos;,
+    subject: &quot;[Jenkins] ${jobName} Build Approval Request&quot;,
+    from: &quot;${useremail}&quot;,
+    to: &quot;${mailToRecipients}&quot;,
+    recipientProviders: [[$class: &apos;CulpritsRecipientProvider&apos;]]
+
+ echo &quot;Building1&quot;
+ try { 
+    userInput = input submitter: &apos;admin&apos;, message: &apos;Do you approve?&apos;
+ } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+   cause = e.causes.get(0)
+   echo &quot;Aborted by &quot; + cause.getUser().toString()
+   userAborted = true
+    echo &quot;SYSTEM aborted, but looks like timeout period didn&apos;t complete. Aborting.&quot;
+ }
+    if (userAborted) {
+  currentBuild.result = &apos;ABORTED&apos;
+ } else {
+  echo &quot;Building2&quot;
+ }
+
+    
+       
+
+}
+stage(&apos;Distribution&apos;)
+{
+parallel &apos;Test&apos;: 
+ {    
+def userAborted = false
+
+ emailext body: &apos;&apos;&apos;
+    Please go to console output of ${BUILD_URL} to input your approve or Reject.&lt;br&gt;
+ &apos;&apos;&apos;,    
+    mimeType: &apos;text/html&apos;,
+    subject: &quot;[Jenkins] ${jobName} Build Approval Request&quot;,
+    from: &quot;${useremail}&quot;,
+    to: &quot;${mailToRecipients}&quot;,
+    recipientProviders: [[$class: &apos;CulpritsRecipientProvider&apos;]]
+
+ echo &quot;Building1&quot;
+ try { 
+    userInput = input submitter: &apos;admin&apos;, message: &apos;Do you approve?&apos;
+ } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+   cause = e.causes.get(0)
+   echo &quot;Aborted by &quot; + cause.getUser().toString()
+   userAborted = true
+    echo &quot;SYSTEM aborted, but looks like timeout period didn&apos;t complete. Aborting.&quot;
+ }
+    if (userAborted) {
+  currentBuild.result = &apos;ABORTED&apos;
+ } else {
+  echo &quot;Building2&quot;
+ }
+ echo &quot;Testing&quot; 
+
+ },
+&apos;Deploy&apos;:
+ {
+
+ echo &quot;Deploying&quot; 
+
+ }
+}
+stage(&apos;Finish&apos;)
+{
+    echo &quot;Successfully Completed&quot;
+}
+
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

@@ -1,0 +1,55 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.8">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.90">
+    <parentIds>
+      <string>6</string>
+    </parentIds>
+    <id>7</id>
+    <descriptorId>hudson.plugins.emailext.EmailExtStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.90">
+      <arguments>
+        <entry>
+          <string>recipientProviders</string>
+          <list>
+            <linked-hash-map>
+              <entry>
+                <string>$class</string>
+                <string>CulpritsRecipientProvider</string>
+              </entry>
+            </linked-hash-map>
+          </list>
+        </entry>
+        <entry>
+          <string>from</string>
+          <string>nagarajup1603@gmail.com</string>
+        </entry>
+        <entry>
+          <string>mimeType</string>
+          <string>text/html</string>
+        </entry>
+        <entry>
+          <string>to</string>
+          <string>nagarajup1603@gmail.com</string>
+        </entry>
+        <entry>
+          <string>body</string>
+          <string>
+    Please go to console output of ${BUILD_URL} to input your approve or Reject.&lt;br&gt;
+ </string>
+        </entry>
+        <entry>
+          <string>subject</string>
+          <string>[Jenkins] email #9 Build Approval Request</string>
+        </entry>
+      </arguments>
+      <sensitiveVariables/>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.42">
+      <startTime>1621488972593</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>

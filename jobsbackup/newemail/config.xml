@@ -1,0 +1,35 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.40">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers>
+        <org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger plugin="poll-mailbox-trigger-plugin@1.026">
+          <spec>* * * * *</spec>
+          <labelRestriction>false</labelRestriction>
+          <enableConcurrentBuild>false</enableConcurrentBuild>
+          <host>imap.gmail.com</host>
+          <username>nagapatukuru@gmail.com</username>
+          <password>{AQAAABAAAAAQQIULuplNpFJg6t2JzWuuQbPEwQGeEuFTZfat9pO0UK4=}</password>
+          <script>subjectContains=prodjob
+</script>
+          <attachments>IGNORE</attachments>
+        </org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger>
+      </triggers>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.90">
+    <script>// Powered by Infostretch 
+
+timestamps {
+
+node () {
+
+}
+}</script>
+    <sandbox>false</sandbox>
+  </definition>
+  <disabled>false</disabled>
+</flow-definition>

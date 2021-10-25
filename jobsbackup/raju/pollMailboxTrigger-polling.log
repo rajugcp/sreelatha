@@ -1,0 +1,24 @@
+Polling started on Jun 24, 2021 1:12:23 PM
+Polling for the job raju
+Looking nodes where the poll can be run.
+Looking for a candidate node to run the poll.
+Looking for a node with no predefined label.
+Trying to poll with the last built on node.
+
+Polling on master.
+Connecting to the mailbox...
+[ERROR] - javax.mail.AuthenticationFailedException: [ALERT] Application-specific password required: https://support.google.com/accounts/answer/185833 (Failure)
+	at com.sun.mail.imap.IMAPStore.protocolConnect(IMAPStore.java:708)
+	at javax.mail.Service.connect(Service.java:342)
+	at javax.mail.Service.connect(Service.java:222)
+	at org.jenkinsci.plugins.pollmailboxtrigger.mail.MailReader.connect(MailReader.java:58)
+	at org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger.checkForEmails(PollMailboxTrigger.java:238)
+	at org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger.checkIfModified(PollMailboxTrigger.java:458)
+	at org.jenkinsci.lib.xtrigger.AbstractTrigger$Runner.run(AbstractTrigger.java:198)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+Polling complete. Took 1.2 sec.
+No changes.

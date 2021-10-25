@@ -1,0 +1,149 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.40">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.18">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <hudson.tasks.MailMessageIdAction plugin="mailer@1.34">
+      <messageId>&lt;245568649.16.1621429474267@akshayacomputer&gt;</messageId>
+    </hudson.tasks.MailMessageIdAction>
+    <org.jenkinsci.plugins.workflow.support.steps.input.InputAction plugin="pipeline-input-step@2.12">
+      <ids class="java.util.concurrent.CopyOnWriteArrayList"/>
+    </org.jenkinsci.plugins.workflow.support.steps.input.InputAction>
+  </actions>
+  <queueId>20</queueId>
+  <timestamp>1621429461031</timestamp>
+  <startTime>1621429461098</startTime>
+  <result>FAILURE</result>
+  <duration>122997</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>node
+{
+
+def jobName = currentBuild.fullDisplayName
+def mailToRecipients = &apos;nagireddy.yerava@gmail.com&apos;
+def useremail=&apos;nagarajup1603@gmail.com&apos;
+
+stage(&apos;Build&apos;) 
+{
+    def userAborted = false
+
+ emailext body: &apos;&apos;&apos;
+    Please go to console output of ${BUILD_URL} to input your approve or Reject.&lt;br&gt;
+ &apos;&apos;&apos;,    
+    mimeType: &apos;text/html&apos;,
+    subject: &quot;[Jenkins] ${jobName} Build Approval Request&quot;,
+    from: &quot;${useremail}&quot;,
+    to: &quot;${mailToRecipients}&quot;,
+    recipientProviders: [[$class: &apos;CulpritsRecipientProvider&apos;]]
+
+ echo &quot;Building1&quot;
+ try { 
+    userInput = input submitter: &apos;admin&apos;, message: &apos;Do you approve?&apos;
+ } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+   cause = e.causes.get(0)
+   echo &quot;Aborted by &quot; + cause.getUser().toString()
+   userAborted = true
+    echo &quot;SYSTEM aborted, but looks like timeout period didn&apos;t complete. Aborting.&quot;
+ }
+    if (userAborted) {
+  currentBuild.result = &apos;ABORTED&apos;
+ } else {
+  echo &quot;Building2&quot;
+ }
+
+    
+       
+
+}
+stage(&apos;Distribution&apos;)
+{
+parallel &apos;Test&apos;: 
+ {    
+def userAborted = false
+
+ emailext body: &apos;&apos;&apos;
+    Please go to console output of ${BUILD_URL} to input your approve or Reject.&lt;br&gt;
+ &apos;&apos;&apos;,    
+    mimeType: &apos;text/html&apos;,
+    subject: &quot;[Jenkins] ${jobName} Build Approval Request&quot;,
+    from: &quot;${useremail}&quot;,
+    to: &quot;${mailToRecipients}&quot;,
+    recipientProviders: [[$class: &apos;CulpritsRecipientProvider&apos;]]
+
+ echo &quot;Building1&quot;
+ try { 
+    userInput = input submitter: &apos;admin&apos;, message: &apos;Do you approve?&apos;
+ } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+   cause = e.causes.get(0)
+   echo &quot;Aborted by &quot; + cause.getUser().toString()
+   userAborted = true
+    echo &quot;SYSTEM aborted, but looks like timeout period didn&apos;t complete. Aborting.&quot;
+ }
+    if (userAborted) {
+  currentBuild.result = &apos;ABORTED&apos;
+ } else {
+  echo &quot;Building2&quot;
+ }
+ echo &quot;Testing&quot; 
+
+ },
+&apos;Deploy&apos;:
+ {
+
+ echo &quot;Deploying&quot; 
+
+ }
+}
+stage(&apos;Finish&apos;)
+{
+    echo &quot;Successfully Completed&quot;
+}
+
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>1972030500</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>86556300</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>3283696700</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>213885800</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>726840000</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>14</iota>
+    <head>1:14</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

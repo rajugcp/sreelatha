@@ -1,0 +1,19 @@
+Started by remote host [0:0:0:0:0:0:0:1]
+Running as SYSTEM
+Building in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\test1
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\test1\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/nagadevops2016/jenkins-maven.git # timeout=10
+Fetching upstream changes from https://github.com/nagadevops2016/jenkins-maven.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.30.1.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/nagadevops2016/jenkins-maven.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 43f0e8395891418e2e6cc6a91018dd00e29d36ad (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 43f0e8395891418e2e6cc6a91018dd00e29d36ad # timeout=10
+Commit message: "Create maven-tomcat.xml"
+ > git.exe rev-list --no-walk 43f0e8395891418e2e6cc6a91018dd00e29d36ad # timeout=10
+Finished: SUCCESS

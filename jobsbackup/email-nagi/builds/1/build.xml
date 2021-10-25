@@ -1,0 +1,132 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.40">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.18">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <hudson.tasks.MailMessageIdAction plugin="mailer@1.34">
+      <messageId>&lt;2137602029.21.1621492017482@akshayacomputer&gt;</messageId>
+    </hudson.tasks.MailMessageIdAction>
+    <org.jenkinsci.plugins.workflow.support.steps.input.InputAction plugin="pipeline-input-step@2.12">
+      <ids class="java.util.concurrent.CopyOnWriteArrayList"/>
+    </org.jenkinsci.plugins.workflow.support.steps.input.InputAction>
+    <com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder plugin="credentials@2.3.15">
+      <boundCredentials class="concurrent-hash-map"/>
+    </com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder>
+    <org.jenkinsci.plugins.workflow.support.steps.input.ApproverAction plugin="pipeline-input-step@2.12">
+      <userId>admin</userId>
+    </org.jenkinsci.plugins.workflow.support.steps.input.ApproverAction>
+  </actions>
+  <queueId>24</queueId>
+  <timestamp>1621492001784</timestamp>
+  <startTime>1621492001878</startTime>
+  <result>SUCCESS</result>
+  <duration>90620</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>node
+{
+
+def jobName = currentBuild.fullDisplayName
+def mailToRecipients = &apos;nagapatukuru@gmail.com&apos;
+def useremail=&apos;nagarajup1603@gmail.com&apos;
+
+stage(&apos;Build&apos;) 
+{
+    def userAborted = false
+
+ emailext body: &apos;&apos;&apos;
+    Please go to console output of ${BUILD_URL}input to approve or Reject.&lt;br&gt;
+ &apos;&apos;&apos;,    
+    mimeType: &apos;text/html&apos;,
+    subject: &quot;[Jenkins] ${jobName} Build Approval Request&quot;,
+    from: &quot;${useremail}&quot;,
+    to: &quot;${mailToRecipients}&quot;,
+    recipientProviders: [[$class: &apos;CulpritsRecipientProvider&apos;]]
+
+ echo &quot;Building1&quot;
+ try { 
+    userInput = input submitter: &apos;vagrant&apos;, message: &apos;Do you approve?&apos;
+ } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+   cause = e.causes.get(0)
+   echo &quot;Aborted by &quot; + cause.getUser().toString()
+   userAborted = true
+    echo &quot;SYSTEM aborted, but looks like timeout period didn&apos;t complete. Aborting.&quot;
+ }
+    if (userAborted) {
+  currentBuild.result = &apos;ABORTED&apos;
+ } else {
+  echo &quot;Building2&quot;
+ }
+
+    
+       
+
+}
+stage(&apos;Distribution&apos;)
+{
+parallel &apos;Test&apos;: 
+ {    
+
+ echo &quot;Testing&quot; 
+
+ },
+&apos;Deploy&apos;:
+ {
+
+ echo &quot;Deploying&quot; 
+
+ }
+}
+stage(&apos;Finish&apos;)
+{
+    echo &quot;Successfully Completed&quot;
+}
+
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>5517268700</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>3951447800</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>9344288000</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>2394785400</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>2471046500</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>33</iota>
+    <head>1:33</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

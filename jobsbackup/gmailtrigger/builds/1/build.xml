@@ -1,0 +1,132 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <org.jenkinsci.lib.xtrigger.XTriggerCauseAction plugin="poll-mailbox-trigger-plugin@1.026">
+      <build class="build" reference="../../.."/>
+    </org.jenkinsci.lib.xtrigger.XTriggerCauseAction>
+    <org.jenkinsci.plugins.pollmailboxtrigger.environment.SetEnvironmentVariablesAction plugin="poll-mailbox-trigger-plugin@1.026">
+      <parameters>
+        <entry>
+          <string>pmt_mail.imaps.host</string>
+          <string>imap.gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_attachments</string>
+          <string>IGNORE</string>
+        </entry>
+        <entry>
+          <string>pmt_mail.debug.auth</string>
+          <string>false</string>
+        </entry>
+        <entry>
+          <string>pmt_retryEmailLink</string>
+          <string>&lt;a href=&quot;mailto:nagapatukuru@gmail.com?subject=prodjob&amp;body=%0D%0A&lt;div dir=&amp;quot;ltr&amp;quot;&gt;test&lt;/div&gt;%0D%0A%0D%0Atest%0D%0A&quot;&gt;Click to Retry Job&lt;/a&gt;</string>
+        </entry>
+        <entry>
+          <string>pmt_receivedXMinutesAgo</string>
+          <string>1440</string>
+        </entry>
+        <entry>
+          <string>pmt_mail.debug</string>
+          <string>false</string>
+        </entry>
+        <entry>
+          <string>pmt_storeName</string>
+          <string>imaps</string>
+        </entry>
+        <entry>
+          <string>pmt_subject</string>
+          <string>prodjob</string>
+        </entry>
+        <entry>
+          <string>pmt_folder</string>
+          <string>INBOX</string>
+        </entry>
+        <entry>
+          <string>pmt_content</string>
+          <string>
+&lt;div dir=&quot;ltr&quot;&gt;test&lt;/div&gt;&#xd;
+
+test&#xd;
+</string>
+        </entry>
+        <entry>
+          <string>pmt_contentType</string>
+          <string>multipart/ALTERNATIVE; boundary=00000000000029156f05c296471d</string>
+        </entry>
+        <entry>
+          <string>pmt_flags</string>
+          <string></string>
+        </entry>
+        <entry>
+          <string>pmt_username</string>
+          <string>nagapatukuru@gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_subjectContains</string>
+          <string>prodjob</string>
+        </entry>
+        <entry>
+          <string>pmt_messageNumber</string>
+          <string>8574</string>
+        </entry>
+        <entry>
+          <string>pmt_headers</string>
+          <string>MIME-Version=1.0, Date=Tue, 18 May 2021 13:42:55 +0530, Message-ID=&lt;CAKSuQNVP4=sZVDJtPKyx67CxXxYeCxoNNzFP2647mDGwvpK1Jw@mail.gmail.com&gt;, Subject=prodjob, From=nagaraju patukuru &lt;nagapatukuru@gmail.com&gt;, To=nagaraju patukuru &lt;nagapatukuru@gmail.com&gt;, Content-Type=multipart/alternative; boundary=&quot;00000000000029156f05c296471d&quot;</string>
+        </entry>
+        <entry>
+          <string>pmt_from</string>
+          <string>nagapatukuru@gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_sentDate</string>
+          <string>2021-05-18T13:42Z</string>
+        </entry>
+        <entry>
+          <string>pmt_host</string>
+          <string>imap.gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_receivedDate</string>
+          <string>2021-05-18T13:42Z</string>
+        </entry>
+        <entry>
+          <string>pmt_mail.imaps.port</string>
+          <string>993</string>
+        </entry>
+        <entry>
+          <string>pmt_recipients</string>
+          <string>nagapatukuru@gmail.com</string>
+        </entry>
+        <entry>
+          <string>pmt_replyTo</string>
+          <string>nagapatukuru@gmail.com</string>
+        </entry>
+      </parameters>
+    </org.jenkinsci.plugins.pollmailboxtrigger.environment.SetEnvironmentVariablesAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger_-NewEmailCause plugin="poll-mailbox-trigger-plugin@1.026">
+            <triggerName>PollMailboxTrigger</triggerName>
+            <causeFrom>Job was triggered by email sent from nagapatukuru@gmail.com</causeFrom>
+            <logEnabled>true</logEnabled>
+          </org.jenkinsci.plugins.pollmailboxtrigger.PollMailboxTrigger_-NewEmailCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>4</queueId>
+  <timestamp>1621325636019</timestamp>
+  <startTime>1621325636192</startTime>
+  <result>SUCCESS</result>
+  <duration>4008</duration>
+  <charset>windows-1252</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\gmailtrigger</workspace>
+  <hudsonVersion>2.277.1</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>
